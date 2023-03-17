@@ -1,10 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 
 
 public class Main {
@@ -28,27 +25,29 @@ public class Main {
      for(int i= arrB.length-1; i>=0 ; i--){
          listB.add(arrB[i]);
      }
+        Iterator<String> it = listA.iterator();
+        Iterator<String> its = listB.iterator();
+     String newA = "";
+     String newB = "";
+     while(it.hasNext()) {
 
-     String newSta="";
-     String newStb ="";
-     int newA = 0;
-     int newB = 0;
-     for (String x : listA) {
-         newSta += x;
-     }
-     for (String x: listB){
-         newStb += x;
-     }
-     newA = Integer.parseInt(newSta);
-     newB = Integer.parseInt(newStb);
+                 newA += it.next();
+             }
+     while(its.hasNext()) {
 
-     if(newA>newB){
+                 newB += its.next();
+             }
+    int newNumA;
+     int newNumB;
+
+     newNumA = Integer.parseInt(newA);
+     newNumB = Integer.parseInt(newB);
+
+     if(newNumA>newNumB){
          System.out.println(newA);
      }else{
          System.out.println(newB);
      }
-
-
 
     }
 }
